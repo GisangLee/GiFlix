@@ -12,7 +12,7 @@ const globalStyles = createGlobalStyle`
     }
     body{
         font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        font-size: 12px;
+        font-size: 14px;
         background-color: #1e272e;
         color: white;
         padding-top: 50px;
