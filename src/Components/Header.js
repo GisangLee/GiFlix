@@ -12,7 +12,7 @@ const Header = styled.header`
   height: 50px;
   display: flex;
   align-items: center;
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: #1e272e;
   z-index: 10;
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
 `;
@@ -26,9 +26,10 @@ const Item = styled.li`
   width: 80px;
   height: 50px;
   align-items: center;
+  text-decoration: none;
   border-bottom: 2px solid
     ${(props) => (props.current ? "#ecf0f1" : "transparent")};
-  transition: border-bottom 0.4s ease-in-out;
+  transition: border-bottom 0.3s ease-in-out;
 `;
 
 const SLink = styled(Link)`
