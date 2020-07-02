@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Loader } from "../../Components/Loader";
 import Section from "../../Components/Section";
+import Message from "../../Components/Message";
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -54,6 +55,13 @@ const SearchPresenter = ({
             ))}
           </Section>
         )}
+        {error && <Message color="#c0392b" text={error} />}
+        {tvResults &&
+        movieResults &&
+        tvResults.length === 0 &&
+        movieResults.length === 0 ? (
+          <Message color="#e84393" text={"원하시는 검색 결과가 없습니다.😥"} />
+        ) : null}
       </>
     )}
   </Container>
