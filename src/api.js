@@ -64,7 +64,7 @@ export const tvApi = {
       },
     }),
   airingToday: () =>
-    api.get("airing_today", {
+    api.get("tv/airing_today", {
       params: {
         api_key: API_KEY,
         language: LANGUAGE,
