@@ -117,9 +117,7 @@ const ProductCompanyName = styled.span`
 
 const ProductCompnayImg = styled.img`
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+  margin: 30px auto;
   width: 150px;
   align: center;
 `;
@@ -199,7 +197,7 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
             <ProductCompanyTitle>제작사</ProductCompanyTitle>
             <ProductCompany>
               {result.production_companies &&
-                result.production_companies.map((company) =>
+                result.production_companies.map((company, index) =>
                   company.logo_path ? (
                     <>
                       <ProductCompanyName>
