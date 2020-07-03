@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import { Loader } from "../../Components/Loader";
+import { Link } from "react-router-dom";
 import Message from "../../Components/Message";
 
 const Container = styled.div`
@@ -113,6 +114,10 @@ const ProductCompanyName = styled.span`
   display: block;
   text-align: center;
   height: 100%;
+  transition: all 0.5s linear;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 const ProductCompnayImg = styled.img`
@@ -126,6 +131,30 @@ const ProductCompanyTitle = styled.h1`
   color: white;
   font-size: 28px;
   margin-bottom: 20px;
+`;
+
+const GotoSeasonContainer = styled.div`
+  margin-top: 25px;
+`;
+
+const GotoSeasonBtn = styled.button`
+  background-color: #82ccdd;
+  width: 30%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+`;
+
+const GotoSeason = styled.div`
+  color: white;
+  background-color: transparent;
+  &:hover {
+    color: #b33939;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  transition: font-size 0.2s ease-in-out;
 `;
 
 const DetailPresenter = ({ result, error, loading, usResult }) =>
@@ -184,6 +213,7 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
           <VideoContainer>
             <VideoBtn>
               <VideoLink
+                key={result.id}
                 href={`https://www.youtube.com/watch?v=${usResult.videos.results.map(
                   (result) => result.key
                 )}`}
@@ -196,13 +226,14 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
           <ProductionCompanyContainer>
             <ProductCompanyTitle>제작사</ProductCompanyTitle>
             <ProductCompany>
-              {result.production_companies &&
-                result.production_companies.map((company, index) =>
+              {usResult.production_companies &&
+                usResult.production_companies.map((company, index) =>
                   company.logo_path ? (
                     <>
                       <ProductCompanyName>
                         {company.name}
                         <ProductCompnayImg
+                          key={result.id}
                           src={`https://image.tmdb.org/t/p/w200${company.logo_path}`}
                         ></ProductCompnayImg>
                       </ProductCompanyName>
@@ -210,6 +241,15 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
                   ) : null
                 )}
             </ProductCompany>
+            {result.seasons ? (
+              <Link to={`/season/${result.id}`}>
+                <GotoSeasonContainer>
+                  <GotoSeasonBtn>
+                    <GotoSeason>시즌 보러가기</GotoSeason>
+                  </GotoSeasonBtn>
+                </GotoSeasonContainer>
+              </Link>
+            ) : null}
           </ProductionCompanyContainer>
         </Data>
       </Content>
