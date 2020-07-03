@@ -19,3 +19,11 @@ Practicing React and ES6 by building a Movie Discovery App.
 - [x] TV Show Detail
 - [x] Movie Detail
 - [x] Search Movi(Movies, TV)
+
+## ToDo
+
+- [ ] Site Link
+- [ ] Tabs inside of Movie / Show Details (개발사, 개발사 나라)
+- [ ] Seasons
+- [ ] Collection Link
+- [ ] Collection Route
