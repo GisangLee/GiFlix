@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import Helmet from "react-helmet";
 import { Loader } from "../../Components/Loader";
+import Message from "../../Components/Message";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -72,9 +74,19 @@ const OverView = styled.p`
 
 const DetailPresenter = ({ result, error, loading }) =>
   loading ? (
-    <Loader />
+    <>
+      <Helmet>
+        <title>Loading | GiFlix</title>
+      </Helmet>
+      <Loader />
+    </>
+  ) : error ? (
+    <Message color="#fdcb6e" text="상세 정보를 찾을 수 업습니다.💦" />
   ) : (
     <Container>
+      <Helmet>
+        <title>{result.title ? result.title : result.name} | GiFlix</title>
+      </Helmet>
       <Backdrop
         bgImage={
           result.backdrop_path
