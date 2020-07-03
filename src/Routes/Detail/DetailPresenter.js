@@ -99,7 +99,6 @@ const VideoLink = styled.a`
 `;
 
 const ProductionCompanyContainer = styled.div`
-  height: 100%;
   width: 100%;
   margin-top: 50px;
 `;
@@ -108,6 +107,7 @@ const ProductCompany = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 30px;
+  margin-bottom: 80px;
 `;
 
 const ProductCompanyName = styled.span`
@@ -130,7 +130,7 @@ const ProductCompnayImg = styled.img`
 const ProductCompanyTitle = styled.h1`
   color: white;
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 `;
 
 const GotoSeasonContainer = styled.div`
@@ -227,19 +227,21 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
             <ProductCompanyTitle>제작사</ProductCompanyTitle>
             <ProductCompany>
               {usResult.production_companies &&
-                usResult.production_companies.map((company, index) =>
-                  company.logo_path ? (
-                    <>
-                      <ProductCompanyName>
-                        {company.name}
-                        <ProductCompnayImg
-                          key={result.id}
-                          src={`https://image.tmdb.org/t/p/w200${company.logo_path}`}
-                        ></ProductCompnayImg>
-                      </ProductCompanyName>
-                    </>
-                  ) : null
-                )}
+                usResult.production_companies.map((company, index) => (
+                  <>
+                    <ProductCompanyName>
+                      {company.name}
+                      <ProductCompnayImg
+                        key={result.id}
+                        src={
+                          company.logo_path
+                            ? `https://image.tmdb.org/t/p/w200${company.logo_path}`
+                            : require("../../assets/noMovie.jpg")
+                        }
+                      ></ProductCompnayImg>
+                    </ProductCompanyName>
+                  </>
+                ))}
             </ProductCompany>
             {result.seasons ? (
               <Link to={`/season/${result.id}`}>

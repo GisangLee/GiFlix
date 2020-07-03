@@ -58,7 +58,17 @@ const SeasonImage = styled.img`
   align: center;
 `;
 
-const SeasonName = styled.span``;
+const SeasonName = styled.span`
+  transition: opacity 0.4s linear;
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+const SeasonItem = styled.span`
+  display: block;
+  margin-top: 10px;
+`;
 
 const SeaonPresenter = ({ result, error, loading, usResult }) =>
   loading ? (
@@ -84,19 +94,32 @@ const SeaonPresenter = ({ result, error, loading, usResult }) =>
           <SeasonTitle>{result.name} 시리즈</SeasonTitle>
           <SeasonGrid>
             {result.seasons &&
-              result.seasons.map((season, index) =>
-                season.poster_path ? (
-                  <>
-                    <SeasonName>
-                      {season.name}
-                      <SeasonImage
-                        key={result.id}
-                        src={`https://image.tmdb.org/t/p/w200${season.poster_path}`}
-                      ></SeasonImage>
-                    </SeasonName>
-                  </>
-                ) : null
-              )}
+              result.seasons.map((season, index) => (
+                <>
+                  <SeasonName>
+                    {season.name}
+                    <SeasonImage
+                      key={result.id}
+                      src={
+                        season.poster_path
+                          ? `https://image.tmdb.org/t/p/w200${season.poster_path}`
+                          : require("../../assets/noMovie.jpg")
+                      }
+                    />
+                    <SeasonItem>
+                      {season.air_date && season.air_date.substring(0, 7)}
+                    </SeasonItem>
+                    <SeasonItem>
+                      {season.overview ? season.over_view : null}
+                    </SeasonItem>
+                    <SeasonItem>
+                      {season.episode_count
+                        ? `총 ${season.episode_count}편`
+                        : null}
+                    </SeasonItem>
+                  </SeasonName>
+                </>
+              ))}
           </SeasonGrid>
         </SeasonContainer>
       </Content>
