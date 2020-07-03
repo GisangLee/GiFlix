@@ -30,4 +30,4 @@ Practicing React and ES6 by building a Movie Discovery App.
 
 #Preview
 
-Try it on [netlyfy](www.giflix.ga)
+Try it on [netlyfy](https://goofy-mestorf-4a59d3.netlify.app/)
