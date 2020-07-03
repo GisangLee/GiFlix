@@ -41,6 +41,35 @@ const Cover = styled.div`
   border-radius: 5px;
 `;
 
+const Data = styled.div`
+  width: 70%;
+  margin-left: 10px;
+`;
+
+const Title = styled.h2`
+  color: white;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+`;
+
+const ItemContainer = styled.div`
+  margin: 20px 0;
+`;
+
+const Item = styled.span``;
+
+const Divider = styled.span`
+  margin: 0px 10px;
+`;
+
+const OverView = styled.p`
+  font-size: 12px;
+  opacity: 0.8;
+  line-height: 1.7;
+  widht: 50%;
+`;
+
 const DetailPresenter = ({ result, error, loading }) =>
   loading ? (
     <Loader />
@@ -61,6 +90,30 @@ const DetailPresenter = ({ result, error, loading }) =>
               : require("../../assets/noMovie.jpg")
           }
         />
+        <Data>
+          <Title>{result.title ? result.title : result.name}</Title>
+          <ItemContainer>
+            <Item>
+              {result.release_date
+                ? result.release_date.substring(0, 4)
+                : result.first_air_date.substring(0, 4)}
+            </Item>
+            <Divider>•</Divider>
+            <Item>
+              {result.runtime ? result.runtime : result.episode_run_time}분
+            </Item>
+            <Divider>•</Divider>
+            <Item>
+              {result.genres &&
+                result.genres.map((genre, index) =>
+                  index === result.genres.length - 1
+                    ? genre.name
+                    : `${genre.name} 🤍 `
+                )}
+            </Item>
+          </ItemContainer>
+          <OverView>{result.overview ? result.overview : ""}</OverView>
+        </Data>
       </Content>
     </Container>
   );
