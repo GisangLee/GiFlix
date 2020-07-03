@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/GiFlix/static/css/main.6b171aae.chunk.css",
+    "main.js": "/GiFlix/static/js/main.c8757da2.chunk.js",
+    "main.js.map": "/GiFlix/static/js/main.c8757da2.chunk.js.map",
+    "runtime-main.js": "/GiFlix/static/js/runtime-main.05fa03ff.js",
+    "runtime-main.js.map": "/GiFlix/static/js/runtime-main.05fa03ff.js.map",
+    "static/css/2.c27a359e.chunk.css": "/GiFlix/static/css/2.c27a359e.chunk.css",
+    "static/js/2.a4cfad3d.chunk.js": "/GiFlix/static/js/2.a4cfad3d.chunk.js",
+    "static/js/2.a4cfad3d.chunk.js.map": "/GiFlix/static/js/2.a4cfad3d.chunk.js.map",
+    "index.html": "/GiFlix/index.html",
+    "precache-manifest.aae0c7890519247484a4cffaca650e67.js": "/GiFlix/precache-manifest.aae0c7890519247484a4cffaca650e67.js",
+    "service-worker.js": "/GiFlix/service-worker.js",
+    "static/css/2.c27a359e.chunk.css.map": "/GiFlix/static/css/2.c27a359e.chunk.css.map",
+    "static/css/main.6b171aae.chunk.css.map": "/GiFlix/static/css/main.6b171aae.chunk.css.map",
+    "static/js/2.a4cfad3d.chunk.js.LICENSE.txt": "/GiFlix/static/js/2.a4cfad3d.chunk.js.LICENSE.txt",
+    "static/media/noMovie.jpg": "/GiFlix/static/media/noMovie.1f01b880.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.05fa03ff.js",
+    "static/css/2.c27a359e.chunk.css",
+    "static/js/2.a4cfad3d.chunk.js",
+    "static/css/main.6b171aae.chunk.css",
+    "static/js/main.c8757da2.chunk.js"
+  ]
+}
