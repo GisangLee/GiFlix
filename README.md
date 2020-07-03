@@ -27,3 +27,7 @@ Practicing React and ES6 by building a Movie Discovery App.
 - [x] Seasons
 - [ ] Collection Link
 - [ ] Collection Route
+
+#Preview
+
+Try it on [netlyfy](www.giflix.ga)
