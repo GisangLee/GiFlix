@@ -72,7 +72,21 @@ const OverView = styled.p`
   widht: 50%;
 `;
 
-const DetailPresenter = ({ result, error, loading }) =>
+const VideoContainer = styled.div`
+  margin-top: 35px;
+`;
+
+const VideoLink = styled.a`
+  color: white;
+  background-color: transparent;
+  transition: font-size 0.2s ease-in-out;
+  &:hover {
+    color: #ffdd59;
+    font-size: 20px;
+  }
+`;
+
+const DetailPresenter = ({ result, error, loading, usResult }) =>
   loading ? (
     <>
       <Helmet>
@@ -125,6 +139,15 @@ const DetailPresenter = ({ result, error, loading }) =>
             </Item>
           </ItemContainer>
           <OverView>{result.overview ? result.overview : ""}</OverView>
+          <VideoContainer>
+            <VideoLink
+              href={`https://www.youtube.com/watch?v=${usResult.videos.results.map(
+                (result) => result.key
+              )}`}
+            >
+              티저 영상 보러가기
+            </VideoLink>
+          </VideoContainer>
         </Data>
       </Content>
     </Container>

@@ -10,6 +10,7 @@ export default class extends React.Component {
     } = props;
     this.state = {
       result: null,
+      usResult: null,
       error: null,
       loading: true,
       isMovie: pathname.includes("/movie/"),
@@ -32,23 +33,33 @@ export default class extends React.Component {
       return push("/");
     }
     let result = null;
+    let usResult = null;
     try {
       if (isMovie) {
         ({ data: result } = await moviesApi.movieDetail(parsedId));
+        ({ data: usResult } = await moviesApi.movieDetailUs(parsedId));
       } else {
         ({ data: result } = await tvApi.showDetail(parsedId));
+        ({ data: usResult } = await tvApi.showDetailUs(parsedId));
       }
       console.log(">>>results: ", result);
     } catch {
       this.setState({ error: "결과를 찾을 수 없습니다." });
     } finally {
-      this.setState({ loading: false, result });
+      this.setState({ loading: false, result, usResult });
     }
   }
 
   render() {
-    const { result, error, loading } = this.state;
+    const { result, error, loading, usResult } = this.state;
     console.log(">>>상세 데이터: ", this.state);
-    return <DetailPresenter result={result} error={error} loading={loading} />;
+    return (
+      <DetailPresenter
+        result={result}
+        error={error}
+        loading={loading}
+        usResult={usResult}
+      />
+    );
   }
 }

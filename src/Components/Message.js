@@ -9,6 +9,7 @@ const Container = styled.div`
 `;
 
 const Text = styled.span`
+  margin: 20% auto;
   color: ${(props) => props.color};
   font-size: 24px;
 `;
