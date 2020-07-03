@@ -45,7 +45,7 @@ const Cover = styled.div`
 
 const Data = styled.div`
   width: 70%;
-  margin-left: 10px;
+  margin-left: 30px;
 `;
 
 const Title = styled.h2`
@@ -76,14 +76,58 @@ const VideoContainer = styled.div`
   margin-top: 35px;
 `;
 
+const VideoBtn = styled.button`
+  background-color: #82ccdd;
+  width: 30%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: font-size 0.2s ease-in-out;
+`;
+
 const VideoLink = styled.a`
   color: white;
   background-color: transparent;
-  transition: font-size 0.2s ease-in-out;
   &:hover {
-    color: #ffdd59;
+    color: #b33939;
     font-size: 20px;
+    font-weight: 600;
   }
+  transition: font-size 0.2s ease-in-out;
+`;
+
+const ProductionCompanyContainer = styled.div`
+  height: 100%;
+  width: 100%;
+  margin-top: 50px;
+`;
+
+const ProductCompany = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 30px;
+`;
+
+const ProductCompanyName = styled.span`
+  display: block;
+  text-align: center;
+  height: 100%;
+`;
+
+const ProductCompnayImg = styled.img`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 150px;
+  align: center;
+`;
+
+const ProductCompanyTitle = styled.h1`
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
 `;
 
 const DetailPresenter = ({ result, error, loading, usResult }) =>
@@ -140,14 +184,35 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
           </ItemContainer>
           <OverView>{result.overview ? result.overview : ""}</OverView>
           <VideoContainer>
-            <VideoLink
-              href={`https://www.youtube.com/watch?v=${usResult.videos.results.map(
-                (result) => result.key
-              )}`}
-            >
-              티저 영상 보러가기
-            </VideoLink>
+            <VideoBtn>
+              <VideoLink
+                href={`https://www.youtube.com/watch?v=${usResult.videos.results.map(
+                  (result) => result.key
+                )}`}
+              >
+                티저 영상 보러가기
+              </VideoLink>
+            </VideoBtn>
           </VideoContainer>
+
+          <ProductionCompanyContainer>
+            <ProductCompanyTitle>제작사</ProductCompanyTitle>
+            <ProductCompany>
+              {result.production_companies &&
+                result.production_companies.map((company) =>
+                  company.logo_path ? (
+                    <>
+                      <ProductCompanyName>
+                        {company.name}
+                        <ProductCompnayImg
+                          src={`https://image.tmdb.org/t/p/w200${company.logo_path}`}
+                        ></ProductCompnayImg>
+                      </ProductCompanyName>
+                    </>
+                  ) : null
+                )}
+            </ProductCompany>
+          </ProductionCompanyContainer>
         </Data>
       </Content>
     </Container>
