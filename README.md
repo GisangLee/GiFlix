@@ -24,6 +24,6 @@ Practicing React and ES6 by building a Movie Discovery App.
 
 - [x] Site Link
 - [x] Tabs inside of Movie / Show Details (개발사, 개발사 나라)
-- [ ] Seasons
+- [x] Seasons
 - [ ] Collection Link
 - [ ] Collection Route
