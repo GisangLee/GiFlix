@@ -171,7 +171,8 @@ const GotoSeasonContainer = styled.div`
 const GotoSeasonBtn = styled.button`
   background-color: transparent;
   width: 100%;
-  height: 100%;
+  height: 20%;
+  margin-top: 20px;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -251,14 +252,18 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
                 (result) => result.key
               )}`}
             >
-              <VideoBtn>⏭ 티저 영상 보러가기</VideoBtn>
+              <VideoBtn>
+                <span role="img">⏭</span> 티저 영상 보러가기
+              </VideoBtn>
             </VideoLink>
             <HomePageLink
               href={
                 result.homepage ? `${result.homepage}` : `https://www.giflix.ga`
               }
             >
-              <HomePageBtn>✅ 사이트 바로가기</HomePageBtn>
+              <HomePageBtn>
+                <span role="img">✅</span> 사이트 바로가기
+              </HomePageBtn>
             </HomePageLink>
           </VideoContainer>
 
@@ -290,11 +295,21 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
             <GotoSeasonContainer>
               <Link to={`/season/${result.id}`}>
                 <GotoSeasonBtn>
-                  <GotoSeason>⏭ 시즌 보러가기</GotoSeason>
+                  <GotoSeason>
+                    <span role="img">⏭</span> 시즌 보러가기
+                  </GotoSeason>
                 </GotoSeasonBtn>
               </Link>
             </GotoSeasonContainer>
-          ) : null}
+          ) : (
+            <Link to={`/collection/${result.id}`}>
+              <GotoSeasonBtn>
+                <GotoSeason>
+                  <span role="img">⏭</span> 시리즈 보러가기
+                </GotoSeason>
+              </GotoSeasonBtn>
+            </Link>
+          )}
         </Data>
       </Content>
     </Container>
