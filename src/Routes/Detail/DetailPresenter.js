@@ -345,7 +345,7 @@ const ProductCompany = styled.div`
     margin-bottom: 10px;
   }
   @media all and (max-width: 479px) {
-    margin-bottom: 10px;
+    display: flex;
   }
 `;
 
