@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Message from "../../Components/Message";
 
 const Container = styled.div`
-  height: calc(100vh - 50px);
+  height: 100vh;
   width: 100%;
   position: relative;
   padding: 50px;
@@ -345,7 +345,7 @@ const ProductCompany = styled.div`
     margin-bottom: 10px;
   }
   @media all and (max-width: 479px) {
-    display: flex;
+    grid-template-columns: repeat(2, 100px);
   }
 `;
 
@@ -455,7 +455,6 @@ const GotoSeasonBtn = styled.button`
 const GotoSeason = styled.div`
   text-align: left;
   color: white;
-  height: 50%;
   background-color: transparent;
   &:hover {
     color: #fff200;
@@ -474,6 +473,7 @@ const GotoSeason = styled.div`
   }
   @media all and (max-width: 479px) {
     font-size: 10px;
+    height
   }
 `;
 
