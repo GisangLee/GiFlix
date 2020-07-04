@@ -253,7 +253,10 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
               )}`}
             >
               <VideoBtn>
-                <span role="img">⏭</span> 티저 영상 보러가기
+                <span role="img" aria-label="teaser">
+                  ⏭
+                </span>{" "}
+                티저 영상 보러가기
               </VideoBtn>
             </VideoLink>
             <HomePageLink
@@ -262,7 +265,10 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
               }
             >
               <HomePageBtn>
-                <span role="img">✅</span> 사이트 바로가기
+                <span role="img" aria-label="site">
+                  ✅
+                </span>{" "}
+                사이트 바로가기
               </HomePageBtn>
             </HomePageLink>
           </VideoContainer>
@@ -296,7 +302,10 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
               <Link to={`/season/${result.id}`}>
                 <GotoSeasonBtn>
                   <GotoSeason>
-                    <span role="img">⏭</span> 시즌 보러가기
+                    <span role="img" aria-label="season">
+                      ⏭
+                    </span>{" "}
+                    시즌 보러가기
                   </GotoSeason>
                 </GotoSeasonBtn>
               </Link>
@@ -305,7 +314,10 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
             <Link to={`/collection/${usResult.id}`}>
               <GotoSeasonBtn>
                 <GotoSeason>
-                  <span role="img">⏭</span> 시리즈 보러가기
+                  <span role="img" aria-label="series">
+                    ⏭
+                  </span>{" "}
+                  시리즈 보러가기
                 </GotoSeason>
               </GotoSeasonBtn>
             </Link>
