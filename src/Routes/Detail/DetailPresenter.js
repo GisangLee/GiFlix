@@ -25,6 +25,46 @@ const Backdrop = styled.div`
   filter: blur(3px);
   opacity: 0.5;
   z-index: 0;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
+  @media all and (min-width: 480px) and (max-width: 768px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
+  @media all and (max-width: 479px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
 `;
 
 const Content = styled.div`
@@ -33,6 +73,26 @@ const Content = styled.div`
   position: relative;
   z-index: 1;
   height: 100%;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (max-width: 479px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Cover = styled.div`
@@ -42,11 +102,56 @@ const Cover = styled.div`
   background-size: cover;
   height: 100%;
   border-radius: 5px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
+  @media all and (max-width: 479px) {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+  }
 `;
 
 const Data = styled.div`
-  width: 70%;
+  width: 100%;
+  height: 100%;
   margin-left: 30px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-top: 15px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 15px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-top: 15px;
+  }
+  @media all and (max-width: 479px) {
+    margin-top: 15px;
+  }
 `;
 
 const Title = styled.h2`
@@ -54,13 +159,38 @@ const Title = styled.h2`
   font-size: 28px;
   font-weight: 400;
   margin-bottom: 10px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 28px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 24px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 20px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 14px;
+  }
 `;
 
 const ItemContainer = styled.div`
   margin: 20px 0;
 `;
 
-const Item = styled.span``;
+const Item = styled.span`
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 20px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 14px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 11px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 12px;
+  }
+`;
 
 const Divider = styled.span`
   margin: 0px 10px;
@@ -72,10 +202,46 @@ const OverView = styled.p`
   line-height: 1.7;
   width: 50%;
   margin-bottom: 10px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 18px;
+    width: 100%;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 14px;
+    width: 100%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 10px;
+    width: 100%;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 10px;
+    width: 100%;
+  }
 `;
 
 const VideoContainer = styled.div`
   margin: 10px 0;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media all and (max-width: 479px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 `;
 
 const VideoBtn = styled.button`
@@ -91,6 +257,18 @@ const VideoBtn = styled.button`
     font-weight: 600;
   }
   transition: font-size 0.2s ease-in-out;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 18px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 14px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 11px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 10px;
+  }
 `;
 
 const VideoLink = styled.a`
@@ -113,6 +291,18 @@ const HomePageBtn = styled.button`
     font-weight: 600;
   }
   transition: font-size 0.2s ease-in-out;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 18px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 14px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 11px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 10px;
+  }
 `;
 
 const HomePageLink = styled.a`
@@ -126,6 +316,18 @@ const HomePageLink = styled.a`
 const ProductionCompanyContainer = styled.div`
   width: 100%;
   margin-top: 30px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-top: 20px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 20px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  @media all and (max-width: 479px) {
+    margin-top: 10px;
+  }
 `;
 
 const ProductCompany = styled.div`
@@ -133,6 +335,18 @@ const ProductCompany = styled.div`
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 30px;
   margin-bottom: 30px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-top: 20px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-bottom: 10px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 479px) {
+    margin-bottom: 10px;
+  }
 `;
 
 const ContentDiver = styled.div`
@@ -148,6 +362,18 @@ const ProductCompanyName = styled.span`
   &:hover {
     opacity: 0.5;
   }
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 20px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 14px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 11px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 10px;
+  }
 `;
 
 const ProductCompnayImg = styled.img`
@@ -155,17 +381,65 @@ const ProductCompnayImg = styled.img`
   margin: 30px auto;
   width: 150px;
   align-items: center;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    width: 80%;
+    margin: 10px auto;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    width: 40%;
+    margin: 10px auto;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    width: 30%;
+    margin: 10px auto;
+  }
+  @media all and (max-width: 479px) {
+    width: 30%;
+    margin: 10px auto;
+  }
 `;
 
 const ProductCompanyTitle = styled.h1`
   color: white;
   font-size: 28px;
   margin-bottom: 50px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
 `;
 
 const GotoSeasonContainer = styled.div`
   width: 30%;
   height: 10%;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 22px;
+    width: 30%;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 15px;
+    width: 30%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 12px;
+    width: 30%;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 10px;
+    width: 40%;
+  }
 `;
 
 const GotoSeasonBtn = styled.button`
@@ -189,6 +463,18 @@ const GotoSeason = styled.div`
     font-weight: 600;
   }
   transition: font-size 0.2s ease-in-out;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 22px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 15px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 12px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 10px;
+  }
 `;
 
 const DetailPresenter = ({ result, error, loading, usResult }) =>
@@ -311,18 +597,18 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
               </Link>
             </GotoSeasonContainer>
           ) : usResult.belongs_to_collection || result.belongs_to_collection ? (
-            <Link to={`/collection/${usResult.id}`}>
-              <GotoSeasonBtn>
-                <GotoSeason>
+            <GotoSeason>
+              <Link to={`/collection/${usResult.id}`}>
+                <GotoSeasonBtn>
                   <span role="img" aria-label="series">
                     ⏭
                   </span>{" "}
                   시리즈 보러가기
-                </GotoSeason>
-              </GotoSeasonBtn>
-            </Link>
+                </GotoSeasonBtn>
+              </Link>
+            </GotoSeason>
           ) : (
-            "시리즈가 없습니다."
+            <GotoSeason>시리즈가 없습니다.</GotoSeason>
           )}
         </Data>
       </Content>
