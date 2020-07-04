@@ -301,14 +301,16 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
                 </GotoSeasonBtn>
               </Link>
             </GotoSeasonContainer>
-          ) : (
-            <Link to={`/collection/${result.id}`}>
+          ) : usResult.belongs_to_collection || result.belongs_to_collection ? (
+            <Link to={`/collection/${usResult.id}`}>
               <GotoSeasonBtn>
                 <GotoSeason>
                   <span role="img">⏭</span> 시리즈 보러가기
                 </GotoSeason>
               </GotoSeasonBtn>
             </Link>
+          ) : (
+            "시리즈가 없습니다."
           )}
         </Data>
       </Content>
