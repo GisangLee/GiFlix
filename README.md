@@ -29,6 +29,12 @@ Practicing React and ES6 by building a Movie Discovery App.
 - [ ] Collection Link
 - [ ] Collection Route
 
+<<<<<<< HEAD
 # Preview:
 
 Try it on [netlify](https://goofy-mestorf-4a59d3.netlify.app/#/)
+=======
+#Preview
+
+Try it on [netlyfy](https://goofy-mestorf-4a59d3.netlify.app/)
+>>>>>>> 4d761b22ac0c8afd26809d58e2543667d4c6a377
