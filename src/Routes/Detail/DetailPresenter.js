@@ -334,7 +334,6 @@ const ProductCompany = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 30px;
-  margin-bottom: 30px;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
     margin-top: 20px;
   }
@@ -345,7 +344,7 @@ const ProductCompany = styled.div`
     margin-bottom: 10px;
   }
   @media all and (max-width: 479px) {
-    grid-template-columns: repeat(2, 100px);
+    grid-template-columns: repeat(3, 25%);
   }
 `;
 
