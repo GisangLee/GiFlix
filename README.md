@@ -25,5 +25,10 @@ Practicing React and ES6 by building a Movie Discovery App.
 - [x] Site Link
 - [x] Tabs inside of Movie / Show Details (개발사, 개발사 나라)
 - [x] Seasons
+- [ ] Responsive for SmartPhone
 - [ ] Collection Link
 - [ ] Collection Route
+
+# Preview:
+
+Try it on [netlify](https://goofy-mestorf-4a59d3.netlify.app/#/)

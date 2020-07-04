@@ -70,17 +70,17 @@ const OverView = styled.p`
   font-size: 12px;
   opacity: 0.8;
   line-height: 1.7;
-  widht: 50%;
+  width: 50%;
+  margin-bottom: 10px;
 `;
 
 const VideoContainer = styled.div`
-  margin-top: 35px;
+  margin: 10px 0;
 `;
 
 const VideoBtn = styled.button`
-  background-color: #82ccdd;
+  background-color: transparent;
   width: 30%;
-  padding: 20px;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -88,10 +88,14 @@ const VideoBtn = styled.button`
 `;
 
 const VideoLink = styled.a`
+  display: block;
+  padding: 20px;
+  text-align: left;
   color: white;
+  width: 100%;
   background-color: transparent;
   &:hover {
-    color: #b33939;
+    color: #fff200;
     font-size: 20px;
     font-weight: 600;
   }
@@ -100,14 +104,19 @@ const VideoLink = styled.a`
 
 const ProductionCompanyContainer = styled.div`
   width: 100%;
-  margin-top: 50px;
+  margin-top: 30px;
 `;
 
 const ProductCompany = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 30px;
-  margin-bottom: 80px;
+  margin-bottom: 30px;
+`;
+
+const ContentDiver = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const ProductCompanyName = styled.span`
@@ -124,7 +133,7 @@ const ProductCompnayImg = styled.img`
   display: block;
   margin: 30px auto;
   width: 150px;
-  align: center;
+  align-items: center;
 `;
 
 const ProductCompanyTitle = styled.h1`
@@ -138,19 +147,21 @@ const GotoSeasonContainer = styled.div`
 `;
 
 const GotoSeasonBtn = styled.button`
-  background-color: #82ccdd;
+  background-color: transparent;
   width: 30%;
-  padding: 20px;
   border: none;
   outline: none;
   border-radius: 4px;
 `;
 
-const GotoSeason = styled.div`
+const GotoSeason = styled.a`
   color: white;
+  display: block;
+  text-align: left;
+  padding: 20px;
   background-color: transparent;
   &:hover {
-    color: #b33939;
+    color: #fff200;
     font-size: 20px;
     font-weight: 600;
   }
@@ -210,6 +221,7 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
             </Item>
           </ItemContainer>
           <OverView>{result.overview ? result.overview : ""}</OverView>
+          <ContentDiver>—</ContentDiver>
           <VideoContainer>
             <VideoBtn>
               <VideoLink
@@ -218,10 +230,11 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
                   (result) => result.key
                 )}`}
               >
-                티저 영상 보러가기
+                ⏭ 티저 영상 보러가기
               </VideoLink>
             </VideoBtn>
           </VideoContainer>
+          <ContentDiver>—</ContentDiver>
 
           <ProductionCompanyContainer>
             <ProductCompanyTitle>제작사</ProductCompanyTitle>
@@ -243,16 +256,17 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
                   </>
                 ))}
             </ProductCompany>
-            {result.seasons ? (
-              <Link to={`/season/${result.id}`}>
-                <GotoSeasonContainer>
-                  <GotoSeasonBtn>
-                    <GotoSeason>시즌 보러가기</GotoSeason>
-                  </GotoSeasonBtn>
-                </GotoSeasonContainer>
-              </Link>
-            ) : null}
+            <ContentDiver>—</ContentDiver>
           </ProductionCompanyContainer>
+          {result.seasons ? (
+            <Link to={`/season/${result.id}`}>
+              <GotoSeasonContainer>
+                <GotoSeasonBtn>
+                  <GotoSeason>⏭ 시즌 보러가기</GotoSeason>
+                </GotoSeasonBtn>
+              </GotoSeasonContainer>
+            </Link>
+          ) : null}
         </Data>
       </Content>
     </Container>
