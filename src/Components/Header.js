@@ -20,6 +20,10 @@ const Header = styled.header`
 const List = styled.ul`
   display: flex;
   margin-left: 1rem;
+  @media all and (max-width: 479px) {
+    margin-left: 10px;
+    width: 45%;
+  }
 `;
 
 const Item = styled.li`
@@ -30,6 +34,9 @@ const Item = styled.li`
   border-bottom: 2px solid
     ${(props) => (props.current ? "#ecf0f1" : "transparent")};
   transition: border-bottom 0.3s ease-in-out;
+  @media all and (max-width: 479px) {
+    font-size: 12px;
+  }
 `;
 
 const SLink = styled(Link)`
