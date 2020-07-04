@@ -202,7 +202,7 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
   ) : error ? (
     <Message color="#fdcb6e" text="상세 정보를 찾을 수 업습니다.💦" />
   ) : (
-    <Container>
+    <Container key={result.id}>
       <Helmet>
         <title>{result.title ? result.title : result.name} | GiFlix</title>
       </Helmet>
