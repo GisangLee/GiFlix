@@ -24,6 +24,46 @@ const Backdrop = styled.div`
   filter: blur(3px);
   opacity: 0.5;
   z-index: 0;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
+  @media all and (min-width: 480px) and (max-width: 768px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
+  @media all and (max-width: 479px) {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: url(${(props) => props.bgImage});
+    background-size: contain;
+  }
 `;
 
 const Content = styled.div`
@@ -32,42 +72,147 @@ const Content = styled.div`
   position: relative;
   z-index: 1;
   height: 100%;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  @media all and (max-width: 479px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const SeasonContainer = styled.div`
   width: 100%;
   height: 100%;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-top: 20px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 20px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-top: 20px;
+  }
+  @media all and (max-width: 479px) {
+    margin-top: 10px;
+  }
 `;
 
 const SeasonGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 30px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-top: 20px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-bottom: 10px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 479px) {
+    margin-bottom: 10px;
+    display: flex;
+  }
 `;
 
 const SeasonTitle = styled.h1`
   color: white;
   font-size: 28px;
   margin-bottom: 50px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 `;
 
 const SeasonImage = styled.img`
   display: block;
-  margin: 30px auto;
+  margin-top: 30px auto;
+  margin-bottom: 30px auto;
+  margin-left: 30px auto;
+  margin-right: 30px auto;
   width: 100%;
-  align: center;
+  align-items: center;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-top: 15px;
+    height: 100%;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-top: 15px;
+    width: 70%;
+    height: 60%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-top: 15px;
+    width: 60%;
+    height: 50%;
+  }
+  @media all and (max-width: 479px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 70%;
+  }
 `;
 
 const SeasonName = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: opacity 0.4s linear;
   &:hover {
     opacity: 0.7;
+  }
+  @media all and (max-width: 479px) {
+    margin-right: 10px;
+    font-size: 12px;
   }
 `;
 
 const SeasonItem = styled.span`
   display: block;
   margin-top: 10px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    font-size: 22px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: 18px;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: 12px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 12px;
+    margin-top: 5px;
+  }
 `;
 
 const SeaonPresenter = ({ result, error, loading, usResult }) =>
