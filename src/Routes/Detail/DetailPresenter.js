@@ -253,7 +253,11 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
             >
               <VideoBtn>⏭ 티저 영상 보러가기</VideoBtn>
             </VideoLink>
-            <HomePageLink href={`${result.homepage}`}>
+            <HomePageLink
+              href={
+                result.homepage ? `${result.homepage}` : `https://www.giflix.ga`
+              }
+            >
               <HomePageBtn>✅ 사이트 바로가기</HomePageBtn>
             </HomePageLink>
           </VideoContainer>
