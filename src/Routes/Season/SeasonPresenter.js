@@ -116,17 +116,27 @@ const SeasonGrid = styled.div`
   grid-template-columns: repeat(auto-fill, 150px);
   grid-gap: 30px;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 20px;
     margin-top: 20px;
   }
   @media all and (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
   @media all and (min-width: 480px) and (max-width: 767px) {
+    grid-template-columns: repeat(auto-fill, 120px);
+    grid-gap: 5px;
+    margin-top: 20px;
     margin-bottom: 10px;
   }
   @media all and (max-width: 479px) {
+    grid-template-columns: repeat(auto-fill, 80px);
+    grid-gap: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
-    display: flex;
   }
 `;
 
@@ -162,7 +172,7 @@ const SeasonImage = styled.img`
   align-items: center;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
     margin-top: 15px;
-    height: 100%;
+    height: 70%;
   }
   @media all and (min-width: 768px) and (max-width: 1023px) {
     margin-top: 15px;
@@ -178,7 +188,7 @@ const SeasonImage = styled.img`
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-    height: 70%;
+    height: 55%;
   }
 `;
 
