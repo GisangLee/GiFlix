@@ -57,7 +57,9 @@ export const moviesApi = {
       params: {
         api_key: API_KEY,
         language: LANGUAGE.korea,
-        query: encodeURIComponent(term),
+        page: 1,
+        query: term,
+        include_adult: false,
       },
     }),
 };
@@ -105,7 +107,9 @@ export const tvApi = {
       params: {
         api_key: API_KEY,
         language: LANGUAGE.korea,
-        query: encodeURIComponent(term),
+        page: 1,
+        query: term,
+        include_adult: false,
       },
     }),
 };
