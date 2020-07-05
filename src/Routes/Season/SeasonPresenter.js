@@ -117,14 +117,13 @@ const SeasonGrid = styled.div`
   grid-gap: 30px;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
     grid-template-columns: repeat(auto-fill, 150px);
-    grid-gap: 20px;
+    grid-gap: 35px;
     margin-top: 20px;
   }
   @media all and (min-width: 768px) and (max-width: 1023px) {
     grid-template-columns: repeat(auto-fill, 150px);
-    grid-gap: 10px;
+    grid-gap: 22px;
     margin-top: 20px;
-    margin-bottom: 10px;
   }
   @media all and (min-width: 480px) and (max-width: 767px) {
     grid-template-columns: repeat(auto-fill, 120px);
@@ -134,9 +133,8 @@ const SeasonGrid = styled.div`
   }
   @media all and (max-width: 479px) {
     grid-template-columns: repeat(auto-fill, 80px);
-    grid-gap: 10px;
+    grid-gap: 17px;
     margin-top: 20px;
-    margin-bottom: 10px;
   }
 `;
 
@@ -162,20 +160,32 @@ const SeasonTitle = styled.h1`
   }
 `;
 
+const SeasonItemContainer = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s linear;
+  &:hover {
+    opacity: 0.7;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-bottom: 10px;
+  }
+  @media all and (max-width: 479px) {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+`;
+
 const SeasonImage = styled.img`
   display: block;
-  margin-top: 30px auto;
-  margin-bottom: 30px auto;
-  margin-left: 30px auto;
-  margin-right: 30px auto;
   width: 100%;
-  align-items: center;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
-    margin-top: 15px;
+    margin: 8px 0;
     height: 70%;
   }
   @media all and (min-width: 768px) and (max-width: 1023px) {
-    margin-top: 15px;
     width: 70%;
     height: 60%;
   }
@@ -185,7 +195,7 @@ const SeasonImage = styled.img`
     height: 50%;
   }
   @media all and (max-width: 479px) {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
     width: 100%;
     height: 55%;
@@ -193,35 +203,35 @@ const SeasonImage = styled.img`
 `;
 
 const SeasonName = styled.span`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.4s linear;
-  &:hover {
-    opacity: 0.7;
+  margin-bottom: 10px;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    margin-bottom: 2px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    margin-bottom: 5px;
   }
   @media all and (max-width: 479px) {
-    margin-right: 10px;
-    font-size: 12px;
+    margin-bottom: 1px;
   }
 `;
 
 const SeasonItem = styled.span`
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
-    font-size: 22px;
+    font-size: 20px;
+    margin-top: 3px;
   }
   @media all and (min-width: 768px) and (max-width: 1023px) {
-    font-size: 18px;
+    font-size: 15px;
+    margin-top: 3px;
   }
   @media all and (min-width: 480px) and (max-width: 767px) {
     font-size: 12px;
   }
   @media all and (max-width: 479px) {
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 10px;
+    margin-top: 2px;
   }
 `;
 
@@ -251,8 +261,8 @@ const SeaonPresenter = ({ result, error, loading, usResult }) =>
             {result.seasons &&
               result.seasons.map((season, index) => (
                 <>
-                  <SeasonName>
-                    {season.name}
+                  <SeasonItemContainer>
+                    <SeasonName>{season.name}</SeasonName>
                     <SeasonImage
                       key={result.id}
                       src={
@@ -272,7 +282,7 @@ const SeaonPresenter = ({ result, error, loading, usResult }) =>
                         ? `총 ${season.episode_count}편`
                         : null}
                     </SeasonItem>
-                  </SeasonName>
+                  </SeasonItemContainer>
                 </>
               ))}
           </SeasonGrid>
