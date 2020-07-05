@@ -12,14 +12,18 @@ const Container = styled.div`
 `;
 
 const Form = styled.form`
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   width: 100%;
 `;
 
 const Input = styled.input`
   all: unset;
-  font-size: 28px;
+  font-size: 20px;
   width: 100%;
+  @media all and (max-width: 479px) {
+    font-size: 14px;
+  }
 `;
 
 const SearchPresenter = ({

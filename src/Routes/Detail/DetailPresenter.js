@@ -10,7 +10,7 @@ const Container = styled.div`
   height: 100vh;
   width: 100%;
   position: relative;
-  padding: 50px;
+  padding: 30px;
 `;
 
 const Backdrop = styled.div`
@@ -455,6 +455,8 @@ const GotoSeason = styled.div`
   text-align: left;
   color: white;
   background-color: transparent;
+  display:flex;
+  justify-content: flex-start;
   &:hover {
     color: #fff200;
     font-size: 20px;
