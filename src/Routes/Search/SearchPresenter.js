@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Loader } from "../../Components/Loader";
 import Section from "../../Components/Section";
 import Message from "../../Components/Message";
@@ -18,11 +20,67 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  all: unset;
+  outline: none;
   font-size: 20px;
-  width: 100%;
+  text-indent: 20px;
+  color: white;
+  background-color: #2c3e50;
+  border: none;
+  ::placeholder {
+    color: rgb(223, 230, 233, 0.8);
+    font-size: 15px;
+  }
+  border-radius: 30px;
+  padding: 10px 0;
+  width: 30%;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    text-indent: 15px;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    text-indent: 12px;
+    width: 40%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    text-indent: 10px;
+    width: 50%;
+    font-size: 15px;
+    ::placeholder {
+      font-size: 12px;
+    }
+  }
   @media all and (max-width: 479px) {
-    font-size: 14px;
+    width: 60%;
+    text-indent: 10px;
+    font-size: 10px;
+    ::placeholder {
+      font-size: 10px;
+    }
+  }
+`;
+
+const Searchdiv = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const IconContainer = styled.div`
+  position: absolute;
+  left: 28%;
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    left: 35%;
+  }
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    left: 27%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    left: 44%;
+    font-size: 13px;
+  }
+  @media all and (max-width: 479px) {
+    left: 53%;
+    font-size: 12px;
   }
 `;
 
@@ -40,11 +98,16 @@ const SearchPresenter = ({
       <title>Search | GiFlix</title>
     </Helmet>
     <Form onSubmit={handleSubmit}>
-      <Input
-        placeholder="영화/TV 프로그램을 검색하세요"
-        value={searchTerm}
-        onChange={updateTerm}
-      />
+      <Searchdiv>
+        <Input
+          placeholder="영화/TV 프로그램을 검색하세요"
+          value={searchTerm}
+          onChange={updateTerm}
+        />
+        <IconContainer>
+          <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+        </IconContainer>
+      </Searchdiv>
     </Form>
     {loading ? (
       <Loader />

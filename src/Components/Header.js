@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFilm, faTv, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link, withRouter } from "react-router-dom";
 
 import styled from "styled-components";
@@ -33,9 +35,14 @@ const Item = styled.li`
   text-decoration: none;
   border-bottom: 2px solid
     ${(props) => (props.current ? "#ecf0f1" : "transparent")};
-  transition: border-bottom 0.3s ease-in-out;
+  font-size: ${(props) => (props.current ? "15px" : "10px")};
+  color: ${(props) => (props.current ? "rgb(255, 234, 167)" : "white")};
+  transition: all 0.3s linear;
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    font-size: ${(props) => (props.current ? "12px" : "8px")};
+  }
   @media all and (max-width: 479px) {
-    font-size: 12px;
+    font-size: ${(props) => (props.current ? "10px" : "6px")};
   }
 `;
 
@@ -46,17 +53,36 @@ const SLink = styled(Link)`
   justify-content: center;
 `;
 
+const IconColumn = styled.span`
+  margin-right: 10px;
+`;
+
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
       <Item current={pathname === "/"}>
-        <SLink to="/">영화</SLink>
+        <SLink to="/">
+          <IconColumn>
+            <FontAwesomeIcon icon={faFilm} size="2x"></FontAwesomeIcon>
+          </IconColumn>
+          영화
+        </SLink>
       </Item>
       <Item current={pathname === "/tv"}>
-        <SLink to="/tv">TV</SLink>
+        <SLink to="/tv">
+          <IconColumn>
+            <FontAwesomeIcon icon={faTv} size="2x"></FontAwesomeIcon>
+          </IconColumn>
+          TV
+        </SLink>
       </Item>
       <Item current={pathname === "/search"}>
-        <SLink to="/search">검색</SLink>
+        <SLink to="/search">
+          <IconColumn>
+            <FontAwesomeIcon icon={faSearch} size="2x"></FontAwesomeIcon>
+          </IconColumn>
+          검색
+        </SLink>
       </Item>
     </List>
   </Header>
