@@ -21,15 +21,25 @@ const Header = styled.header`
 
 const List = styled.ul`
   display: flex;
-  margin-left: 1rem;
+  margin-left: 10px;
+  width: 25%;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    width: 40%;
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    width: 40%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    width: 80%;
+  }
   @media all and (max-width: 479px) {
     margin-left: 10px;
-    width: 45%;
+    width: 70%;
   }
 `;
 
 const Item = styled.li`
-  width: 80px;
+  width: 100%;
   height: 50px;
   align-items: center;
   text-decoration: none;
@@ -38,6 +48,13 @@ const Item = styled.li`
   font-size: ${(props) => (props.current ? "15px" : "10px")};
   color: ${(props) => (props.current ? "rgb(255, 234, 167)" : "white")};
   transition: all 0.3s linear;
+  @media all and (min-width: 1024px) and (max-width: 1366px) {
+    width: 80%;
+    font-size: ${(props) => (props.current ? "16px" : "10px")};
+  }
+  @media all and (min-width: 768px) and (max-width: 1023px) {
+    font-size: ${(props) => (props.current ? "14px" : "12px")};
+  }
   @media all and (min-width: 480px) and (max-width: 767px) {
     font-size: ${(props) => (props.current ? "12px" : "8px")};
   }
@@ -57,9 +74,29 @@ const IconColumn = styled.span`
   margin-right: 10px;
 `;
 
+const Logo = styled.div`
+  width: 90%;
+  margin-right: 10px;
+  background-image: url(${(props) => props.logo});
+  background-position: center center;
+  background-size: contain;
+  border: none;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-in-out;
+  &:hover {
+    width: 120%;
+  }
+  @media all and (min-width: 480px) and (max-width: 767px) {
+    margin-right: 0;
+  }
+`;
+
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
+      <Logo logo={require("../assets/logo.svg")}>
+        <SLink to="/"></SLink>
+      </Logo>
       <Item current={pathname === "/"}>
         <SLink to="/">
           <IconColumn>
