@@ -70,9 +70,9 @@ const Backdrop = styled.div`
 const Content = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
   position: relative;
   z-index: 1;
-  height: 100%;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
     flex-direction: column;
     justify-content: center;
@@ -526,8 +526,25 @@ const DetailPresenter = ({ result, error, loading, usResult }) =>
                 result.genres.map((genre, index) =>
                   index === result.genres.length - 1
                     ? genre.name
-                    : `${genre.name} 🤍 `
+                    : `${genre.name} / `
                 )}
+            </Item>
+            <Divider>•</Divider>
+            <Item>
+              {result.vote_average &&
+              (result.vote_average / 2).toFixed(1) >= 5.0
+                ? "❤❤❤❤❤"
+                : (result.vote_average / 2).toFixed(1) >= 4.0
+                ? "❤❤❤❤🤍"
+                : (result.vote_average / 2).toFixed(1) >= 3.0
+                ? "❤❤❤🤍🤍"
+                : (result.vote_average / 2).toFixed(1) >= 2.0
+                ? "❤❤🤍🤍🤍"
+                : (result.vote_average / 2).toFixed(1) >= 1.0
+                ? "❤🤍🤍🤍🤍"
+                : (result.vote_average / 2).toFixed(1) >= 0.0
+                ? "🤍🤍🤍🤍🤍"
+                : null}
             </Item>
           </ItemContainer>
           <OverView>{result.overview ? result.overview : ""}</OverView>
