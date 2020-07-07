@@ -59,10 +59,20 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
           }
         />
         <Rating>
-          <span role="img" aria-label="rating">
-            🏆
-          </span>{" "}
-          {rating}/10
+          <span role="img" aria-label="rating"></span>
+          {(rating / 2).toFixed(1) >= 5.0
+            ? "❤❤❤❤❤❤"
+            : (rating / 2).toFixed(1) >= 4.0
+            ? "❤❤❤❤🤍"
+            : (rating / 2).toFixed(1) >= 3.0
+            ? "❤❤❤🤍🤍"
+            : (rating / 2).toFixed(1) >= 2.0
+            ? "❤❤🤍🤍🤍"
+            : (rating / 2).toFixed(1) >= 1.0
+            ? "❤🤍🤍🤍🤍"
+            : (rating / 2).toFixed(1) >= 0.0
+            ? "🤍🤍🤍🤍🤍"
+            : "평점이 없습니다."}
         </Rating>
       </ImageContainer>
       <Title>
