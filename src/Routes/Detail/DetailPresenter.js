@@ -139,17 +139,22 @@ const Cover = styled.div`
 const Data = styled.div`
   width: 100%;
   height: 100%;
+  margin-left: 30px;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
     margin-top: 15px;
+    margin-left: 0;
   }
   @media all and (min-width: 768px) and (max-width: 1023px) {
     margin-top: 15px;
+    margin-left: 0;
   }
   @media all and (min-width: 480px) and (max-width: 767px) {
     margin-top: 15px;
+    margin-left: 0;
   }
   @media all and (max-width: 479px) {
     margin-top: 15px;
+    margin-left: 0;
   }
 `;
 
