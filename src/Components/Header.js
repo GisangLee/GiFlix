@@ -45,7 +45,7 @@ const Item = styled.li`
   text-decoration: none;
   border-bottom: 2px solid
     ${(props) => (props.current ? "#ecf0f1" : "transparent")};
-  font-size: ${(props) => (props.current ? "15px" : "10px")};
+  font-size: ${(props) => (props.current ? "15px" : "12px")};
   color: ${(props) => (props.current ? "rgb(255, 234, 167)" : "white")};
   transition: all 0.3s linear;
   @media all and (min-width: 1024px) and (max-width: 1366px) {
