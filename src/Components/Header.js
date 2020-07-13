@@ -42,6 +42,7 @@ const Item = styled.li`
   width: 100%;
   height: 50px;
   align-items: center;
+
   text-decoration: none;
   border-bottom: 2px solid
     ${(props) => (props.current ? "#ecf0f1" : "transparent")};
