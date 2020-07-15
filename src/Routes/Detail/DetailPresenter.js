@@ -226,6 +226,7 @@ const OverView = styled.p`
 
 const VideoContainer = styled.div`
   margin: 10px 0;
+
   @media all and (min-width: 1024px) and (max-width: 1366px) {
     display: flex;
     justify-content: space-around;
